@@ -207,6 +207,7 @@ module RSpec
         end
 
         def find_failed_line(backtrace, path)
+          return nil unless backtrace
           path = File.expand_path(path)
           backtrace.detect { |line|
             match = line.match(/(.+?):(\d+)(|:\d+)/)

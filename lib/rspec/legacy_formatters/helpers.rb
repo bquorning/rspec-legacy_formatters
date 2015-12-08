@@ -4,7 +4,7 @@ module RSpec
       extend self
 
       def format_backtrace(backtrace, options = {})
-        return "" unless backtrace
+        return [] unless backtrace
         return backtrace if options[:full_backtrace] == true
 
         cleansed = backtrace.map { |line| backtrace_line(line) }.compact
